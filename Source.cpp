@@ -1,6 +1,5 @@
 #include<iostream>
 #include <windows.h>
-//_CRT_SECURE_NO_WARNINGS
 using namespace std;
 COORD UI_NEW, UI_OLD, UI_temp;
 HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -32,8 +31,8 @@ void Print_Center_Aligned(string Message) {
         // cout << short(Message_Newlegth/2);
     }
     else{
-        // Message_legth_Correction = (Message.size() / 2) - 2;     //TOSHIBA Center Align
-        Message_legth_Correction = (Message.size() / 2) -1;     //TOSHIBA Center Align
+        // Message_legth_Correction = (Message.size() / 2) - 2;     //monitor Center lign
+        Message_legth_Correction = (Message.size() / 2) -1;     // Center Align
     }
         //Message_legth_Correction = Message_Newlegth/2;
    // Message_legth_Correction;
@@ -49,24 +48,6 @@ int main() {
         get_console_sz();
         Print_Center_Aligned(Message);
     }
-/*
-    while (1)
-    {
-        // SetConsoleCursorPosition(Console, { 0,0 });
-        get_console_sz(&myvar);
-   //     cout << myvar.cols;
-
-        char s[] = "hello world";
-        printf("%*s\n", strlen(s) + ((myvar.cols+2) - strlen(s)) / 2, s);
-
-    }/*_dupenv_s  */
-    //int columns = strtol(getenv("COLUMNS"), NULL, 10);
-   // int fwidth = strlen(s) + (columns - strlen(s)) / 2;
-    //printf("%*s\n", fwidth, s);
-    /*char* mytext = "hello, world!";
-    int x, y;
-    getmaxyx(stdscr, y, x);
-    mvaddstr(stdscr, y / 2, (x / 2) - (strlen(mytext) / 2)), mytext);*/
 }
 
 
